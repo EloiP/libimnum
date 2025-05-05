@@ -6,14 +6,14 @@
 /*   By: epascual <epascual@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:14:37 by epascual          #+#    #+#             */
-/*   Updated: 2025/05/04 12:59:23 by epascual42       ###   ########.fr       */
+/*   Updated: 2025/05/05 15:52:09 by epascual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "imnum.h"
 
 //Multiplica complejos
-t_num	immul(t_num a, ...)
+t_num	*immul(int a, t_num *ret, ...)
 {
 	va_list	b;
 	t_im	resx;
@@ -22,20 +22,19 @@ t_num	immul(t_num a, ...)
 	t_num	iter;
 	int	i;
 
-	va_start(b, a);
-	resx = a.x;
-	resy = a.y;
+	va_start(b, ret);
+	resx = 0;
+	resy = 0;
 	i = 0;
 	iter = va_arg(b, t_num);
-	while (i++ <= a)
+	while (i++ < a)
 	{
 		tmp = resx;
 		resx = ((resx) * (iter.x)) - ((resy) * (iter.y));
 		resy = ((tmp) * (iter.y) )+ ((resy) * (iter.x));
 		iter = va_arg(b, t_num);
 	}
-	t_num	ret;
-	ret = iminit(resx, resy);
+	iminit(ret, resx, resy);
 	va_end(b);
 	return (ret);
 }

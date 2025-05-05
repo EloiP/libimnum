@@ -6,7 +6,7 @@
 /*   By: epascual <epascual@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:11:54 by epascual          #+#    #+#             */
-/*   Updated: 2025/05/05 11:12:07 by epascual42       ###   ########.fr       */
+/*   Updated: 2025/05/05 16:29:12 by epascual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ typedef struct s_imnum
 t_im	imarg(t_num *a);
 void	iminv(t_num *a);
 t_im	immod(t_num *a);
-t_num	*immul(int a, ...);
-t_num	*imsum(int a, ...);
+t_num	*immul(int a, t_num *ret, ...);
+t_num	*imsum(int a, t_num *ret, ...);
 void	printim(t_num *print, int mode);
 void	iminit(t_num *res, t_im a, t_im b);
-t_num	*imre(t_num a);
-t_num	*imim(t_num a);
+void	imre(t_num *a);
+void	imim(t_num *a);

@@ -11,3 +11,9 @@ Despues de construir un numero se debe llamar al constructor iminit.
 ## Funciones
 
 > iminv: invierte un numero complejo.
+>
+> immul: pasale un int, un num donde almacenar y los nums que quieres multiplicar.
+>
+> imsum: igual que immul pero con sumar.
+>
+> printim: Imprime el numero imaginario, despues el int que pasas es de que forma se exxpresa.
